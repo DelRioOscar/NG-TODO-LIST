@@ -1,0 +1,15 @@
+<footer class="footer">
+    <span class="todo-count"><strong>{{(todos$ | async).length}}</strong> Tareas</span>
+    <ul class="filters">
+        <li>
+            <a [class.selected]="typeSelected === 'Todos'" (click)="selectedType('Todos')">Todos</a>
+        </li>
+        <li>
+            <a [class.selected]="typeSelected === 'Pendientes'" (click)="selectedType('Pendientes')">Pendientes</a>
+        </li>
+        <li>
+            <a [class.selected]="typeSelected === 'Completados'" (click)="selectedType('Completados')">Completados</a>
+        </li>
+    </ul>
+    <button class="clear-completed" (click)="onReset()">Limpiar Completados</button>
+</footer>

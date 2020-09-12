@@ -1,0 +1,8 @@
+<li [ngClass]="{'editing': isEditing, 'completed': todo.isChecked}" (dblclick)="onEdit()">
+    <div class="view">
+        <input class="toggle" type="checkbox" [checked]="todo.isChecked" (click)="onChecked()">
+        <label>{{todo.name}}</label>
+        <button class="destroy" (click)="onDelete()"></button>
+    </div>
+    <input #inputReference class="edit" [formControl]="textTodo" (keyup.enter)="onSubmit()">
+</li>
